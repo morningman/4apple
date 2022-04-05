@@ -32,8 +32,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14.16.1
-
+    - name: Setup error
+      run: |
+        mkdir a/b/c/d
