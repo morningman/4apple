@@ -1,0 +1,17 @@
+name: Auto Reply to PR
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Comment on PR
+      uses: peter-evans/create-or-update-comment@v1
+      with:
+        issue-number: ${{ github.event.pull_request.number }}
+        body: |
+          感谢您的贡献！我们会尽快审查这个Pull Request。
+
